@@ -52,6 +52,6 @@ def post_data():
     response = {'message': 'Datos recibidos correctamente', 'data': data}
     return jsonify(response)
 
-if __name__ == '__main__':
-    app.run(port=42024)  # Ejecuta la aplicación en modo debug para facilitar la depuración
-    print("App is running")
+
+app.run(port=42024)  # Ejecuta la aplicación en modo debug para facilitar la depuración
+print("App is running")
