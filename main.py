@@ -1,6 +1,9 @@
+import os
 from flask import Flask, request, jsonify, render_template
 import random
 app = Flask(__name__)
+
+port = int(os.environ.get("PORT", 42024))  # Default to port 5000 if PORT environment variable is not set
 
 greetings = [
     'Guten Tag!',
@@ -53,5 +56,5 @@ def post_data():
     return jsonify(response)
 
 
-app.run(port=42024)  # Ejecuta la aplicación en modo debug para facilitar la depuración
+app.run(port=port, host='0.0.0.0')  # Ejecuta la aplicación en modo debug para facilitar la depuración
 print("App is running")
