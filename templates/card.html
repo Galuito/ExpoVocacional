@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Card Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .card {
+            width: 90%;
+            max-width: 400px; /* Limit maximum width for larger screens */
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 500px) {
+            .card {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Tarjeta de Bienvenida</h1>
+        <p>Hola, <span id="recipient-name">{{ recipient_name }}</span>!</p>
+        <p>{{ greeting_message }}</p>
+        <div class="button-container">
+            <a href="{{ url_for('generate_card') }}" class="button">Create Another Card</a>
+        </div>
+    </div>
+</body>
+</html>
