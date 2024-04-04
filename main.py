@@ -53,4 +53,5 @@ def post_data():
     return jsonify(response)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=42024)  # Ejecuta la aplicación en modo debug para facilitar la depuración
+    app.run(port=42024)  # Ejecuta la aplicación en modo debug para facilitar la depuración
+    print("App is running")
