@@ -42,18 +42,22 @@ def send_card():
     random_greeting = random.choice(greetings)
     return render_template('card.html', recipient_name = name, greeting_message = random_greeting)
 
+@app.route('/links_utiles', methods=['GET'])
+def links_utiles():
+    return render_template("links.html")
+
 # Define un endpoint para recibir solicitudes POST
-@app.route('/post_data', methods=['POST'])
-def post_data():
-    # Obtén los datos enviados en la solicitud POST
-    data = request.json
+# @app.route('/post_data', methods=['POST'])
+# def post_data():
+#     # Obtén los datos enviados en la solicitud POST
+#     data = request.json
     
-    # Aquí puedes colocar la lógica para procesar los datos recibidos
-    # Por ejemplo, puedes guardarlos en una base de datos, enviarlos al Arduino, etc.
+#     # Aquí puedes colocar la lógica para procesar los datos recibidos
+#     # Por ejemplo, puedes guardarlos en una base de datos, enviarlos al Arduino, etc.
     
-    # Retorna una respuesta
-    response = {'message': 'Datos recibidos correctamente', 'data': data}
-    return jsonify(response)
+#     # Retorna una respuesta
+#     response = {'message': 'Datos recibidos correctamente', 'data': data}
+#     return jsonify(response)
 
 
 app.run(port=port, host='0.0.0.0')  # Ejecuta la aplicación en modo debug para facilitar la depuración
